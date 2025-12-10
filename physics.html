@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="title" content="VseFormuly">
+    <meta name="description" content="Формулы по Физики для подготовки к ОГЭ, ЕГЭ. Формулы из всех разделов физики, изучаемых в школе. Механика. Кинематика. Динамика. Законы сохранения. Механические колебания и волны. ">
+    <link rel="shortcut icon" href="static\img\logo.png">
+    <title>Механика | VseFormuly | Физика</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    <style>
+            #scrollToTopBtn {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                background-color: #1D4ED8;
+                color: white; 
+                border: none;
+                padding: 12px;
+                border-radius: 50%;
+                opacity: 0;      
+                visibility: hidden; 
+                transition: opacity 0.3s, visibility 0.3s;
+                cursor: pointer;
+                z-index: 1000; 
+                }
+
+            #scrollToTopBtn.show {
+                opacity: 1;
+                visibility: visible;
+                }
+                .dropdown-menu {
+                        display: none;
+                        position: absolute;
+                        top: 20%;
+                        left: 10%;
+                        background-color: #fdfdfd;
+                        border-radius: 0.5rem;
+                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                        z-index: 1000;
+                        max-width: 70%;
+                        }
+
+        .dropdown-parent:hover .dropdown-menu {
+            display: block;
+        }
+
+
+        .dropdown-menu a  {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #1a202c;
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            color: #3b82f6;
+            background-color: #f8fafc;
+        }
+
+        .dropdown-menu1 {
+                        display: none;
+                        position: absolute;
+                        top: 47%;
+                        left: 10%;
+                        background-color: #fdfdfd;
+                        border-radius: 0.5rem;
+                        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                        z-index: 1000;
+                        max-width: 70%;
+                        }
+
+        .dropdown-menu1 {
+            display: block;
+        }
+
+        .dropdown-menu1 a  {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #1a202c;
+            text-decoration: none;
+        }
+
+        .dropdown-menu1 a:hover {
+            color: #3b82f6;
+            background-color: #f8fafc;
+        }
+
+
+
+        .snow-toggle {
+            position: fixed;
+bottom: 40px;
+left: 30px;
+    z-index: 9999;
+}
+
+.toggle-label {
+    display: flex;
+    
+    font-family: Arial, sans-serif;
+    user-select: none;
+}
+
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle-input:checked + .toggle-slider {
+    background-color: #1ac3e0;
+}
+
+.toggle-input:checked + .toggle-slider::before {
+    transform: translateX(20px);
+}
+
+.toggle-label-text {
+    margin-left: 10px;
+    color: #333;
+    font-size: 14px;
+}
+
+
+
+.snowflake {
+    position: fixed;
+    top: -20px;
+    color: rgb(233, 233, 233);
+    font-size: 28px;
+    animation: fall 10s linear infinite;
+    z-index: 9998;
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+
+</style>
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen ">
+    <div class="snow-toggle " >
+        <label class="toggle-label">
+            <input type="checkbox" id="snowToggle" class="toggle-input">
+            <span class="toggle-slider"></span>
+            <span class="toggle-label-text">Снежинки</span>
+        </label>
+    </div>
+    <button id="scrollToTopBtn"><i data-feather="arrow-up" class="h-6 w-6"></i></button>
+<script>
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    function toggleScrollButton() {
+        if (window.scrollY > 100) {
+        scrollBtn.classList.add('show');
+        } else {
+        scrollBtn.classList.remove('show');
+        }
+    }
+    
+    window.addEventListener('scroll', toggleScrollButton);
+    
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        });
+    });
+    </script>
+
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="flex space-x-2"><img src="static\img\logo.png" alt="" class=" h-8 w-8">
+                    <span class=" text-xl  font-bold text-dark">VseFormuly</span></a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-blue-600 font-medium ">Физика</a>
+                    <a href="basic_math.html" class="text-dark hover:text-emerald-600 transition">Базовая математика</a>
+                    <a href="advanced_math.html" class="text-dark hover:text-purple-600 transition">Профильная математика</a>
+                </div>
+                <a href="index.html" class="flex items-center text-dark hover:text- transition ">
+                    <i data-feather="home" class="h-5 w-5 mr-1 hidden md:inline"></i>
+                    <span class="hidden md:inline">Главная</span>
+                </a> 
+                <button class="md:hidden focus:outline-none " id="menu-toggle">
+                    <i data-feather="menu" class="h-6 w-6"></i>
+                </button>
+                
+            </div>
+            <div class="md:hidden hidden bg-white py-2 px-4 shadow-lg" id="mobile-menu">
+                <a href="#" class="block py-2  transition">Физика</a>
+                <a href="basic_math.html" class="block py-2   transition">Базовая математика</a>
+                <a href="advanced_math.html" class="block py-2  transition">Профильная математика</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="lg:w-1/4">
+                <div class="bg-white rounded-xl shadow-lg p-6 sticky top-4 ">
+                    <h2 class="text-xl font-bold text-dark mb-4 flex items-center">
+                        <img src="static\img\atom.svg" alt="" class="mr-2">
+                        Разделы физики
+                    </h2>
+                    <nav class="space-y-2">
+                        <div class="flex flex-row block py-2 px-3 rounded-lg hover:bg-blue-50 text-dark text-blue-600 transition cursor-pointer dropdown-parent ">
+                            <img src="static/img/chevron-down.svg" alt="">
+                            Механика
+                            <ul class="dropdown-menu hidden">
+                            <a href="physics.html#Kinematica" class="dropdown-link">Кинематика</a>
+                            <a href="physics.html#dinamica" class="dropdown-link">Динамика</a>
+                            <a href="physics.html#statica" class="dropdown-link">Статика</a>
+                            <a href="physics.html#laws-of-save" class="dropdown-link">Законы сохранения</a>
+                            <a href="physics.html#mechanical-wawes" class="dropdown-link">Механические колебания и волны</a>
+                            <a href="physics.html#hydrostatic" class="dropdown-link">Гидростатика и аэростатика</a>
+                            </ul>
+                        </div>
+                        
+                        <a href="physics_MKT.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 text-dark hover:text-blue-600 transition">Молекулярная физика</a>
+                        <a href="physics_TERMO.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 text-dark hover:text-blue-600 transition">Термодинамика</a>
+                        <div class="flex flex-row block py-2 px-3 rounded-lg hover:bg-blue-50 text-dark hover:text-blue-600 transition cursor-pointer dropdown-parent ">
+                            <img src="static/img/chevron-down.svg" alt="">
+                            Электродинамика
+                            <ul class="dropdown-menu1 hidden">
+                            <a href="physics_electro.html#electro-pole" class="dropdown-link">Электрическое поле</a>
+                            <a href="physics_electro.html#laws-const-tok" class="dropdown-link">Законы постоянного тока</a>
+                            <a href="physics_electro.html#electrom-pole" class="dropdown-link">Электромагнитное поле</a>
+                            <a href="physics_electro.html#electromagnit-colebaniya" class="dropdown-link">Электромагнитные колебания</a>
+                            </ul>
+                        </div>
+                        <a href="physics_optic.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 text-dark hover:text-blue-600 transition">Оптика</a>
+                        <a href="physics_quantum.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50   hover:text-blue-600 transition">Квантовая физика</a>
+                        <a href="physics_ATOM.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50   hover:text-blue-600 transition">Ядерная и атомная физика</a>
+                        <a href="physics_CTO.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 text-dark hover:text-blue-600 transition" title = 'Специальная теория относительности'>СТО</a>
+                        <a href="Physics_TABLE.html" class="block py-2 px-3 rounded-lg hover:bg-blue-50 text-dark hover:text-blue-600 transition">Таблицы</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="lg:w-3/4">
+                <div class="from-blue-600 to-blue-400 rounded-xl shadow-lg py-6 mb-6 text-center" style="
+                background-image: url('fons/mechanic_fons.png'), linear-gradient(to right, #1a0dab, #7a43f5);
+                background-repeat: no-repeat, no-repeat;
+                background-position: center, center;
+                background-size: cover, 100% 100%;
+                background-blend-mode: soft-light;">
+                    <h1 class="text-5xl font-bold text-white ">Механика</h1>
+                    <p class="text-blue-100 mt-2 ">Формулы движение и взаимодействие тел.</p>
+                </div>
+                
+                
+
+                        <h2 id="Kinematica" class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i data-feather="move" class="mr-2"></i>
+                            Кинематика
+                        </h2>   
+                        
+
+
+
+
+                        
+                                                            <!-- Скорость -->
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                        <img src="static\img\speed.svg" alt="" class="pr-1">
+                        <h3 class="text-xl font-semibold text-white">Скорость</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">При равномерном движении:</h4>
+                                
+                                    <img src="static\img\formulas\скорость.png" alt="" class="h-28 w-27 ml-20">
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class="backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2  ">
+                                    <b>υ</b> - скорость (м/с) <br>
+                                    <b>S</b> - путь (м) <br>
+                                    <b>t</b> - время (с)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">При равноускоренном движении:</h4>
+                                
+                                    <img src="static\img\formulas\скоростьравнускр.png" alt="" >
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class="backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2  ">
+                            <b>υ</b> - скорость тела (м/с) <br>
+                            <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                            <b>α</b> - ускорение (м/с²) <br>
+                            <b>t</b> - время (с)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">При свободном падении тел:</h4>
+                                
+                                    <img src="static\img\formulas\скор-свобод.svg" alt="" >
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2  ">
+                            <b>υ</b> - скорость тела (м/с) <br>
+                            <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                            <b>g</b> - ускорение сободного падения (9,8 м/с²) <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Скорость по оси X:</h4>
+                                
+                                    <img src="static\img\formulas\скоростьx.png" alt="" class="mt-14">
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                            <b>υ<sub>x</sub></b> - проекция скорости на ось X (м/с) <br>
+                            <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                            <b>cos α</b> - косинус угла α <br>(между v<sub>0</sub> и осью X)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Скорость по оси Y:</h4>
+                                
+                                    <img src="static\img\formulas\скоростьY.png" alt="" class="mt-28">
+                                
+                            </div>
+                            <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2  ">
+                                <b>υ<sub>y</sub></b> - проекция скорости на ось Y (м/с) <br>
+                                <b>υ<sub>y</sub><sub>0</sub></b> - начальная скорость (м/с) <br>  
+                                <b>t</b> - время <br>
+                                <b>v<sub>0</sub></b> - модуль начальной скорости <br>
+                                <b>sin α<sub>0</sub></b> - синус угла броска (α<sub>0</sub>)<br>
+                                <b>g</b>- ускорение свободного падения (9,8 м/с²)
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                                                        <!-- Путь(высота) -->
+
+
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                        <img src="static\img\height.svg" alt="" class="pr-1">
+                        <h3 class="text-xl font-semibold text-white">Путь(высота)</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">При равномерном движении:</h4>
+                                
+                                    <img src="static\img\formulas\путь.png" alt="" >
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <b>S</b> - путь (м) <br>
+                                    <b>υ</b> - скорость (м/с) <br>
+                                    <b>t</b> - время (с)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">При равноускоренном движении:</h4>
+                                
+                                    <img src="static\img\formulas\путьравнускр.png" alt="" >
+                                    <p class="text-2xl text-center py-4">ИЛИ</p> 
+                                    <img src="static\img\formulas\путьравнускрбезвремени.png" alt=""  >
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 mt-20 ">
+                                    <b>S</b> - путь (м) <br>
+                                    <b>υ</b> - скорость (м/с) <br>
+                                    <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                                    <b>α</b> - ускорение (м/с²) <br>
+                                    <b>t</b> - время (с)
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Высота подъёма:</h4>
+                                
+                                    <img src="static\img\formulas\высотапод.png" alt="" >
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                            <b>y(h)</b> - высота (м)<br>
+                            <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                            <b>t</b> - время (с) <br>
+                            <b>sin α</b> — синус угла броска (α)<br>
+                            <b>g</b> - ускорение сободного падения (9,8 м/с²) 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Максимальна высота подъёма:</h4>
+                                
+                                    <img src="static\img\formulas\максвысота.png" alt="" >
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                            <b>h<sub>max</sub></b> - максимальная высота (м)<br>
+                            <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                            <b>sin α</b> — синус угла броска (α)<br>
+                            <b>g</b> - ускорение сободного падения (9,8 м/с²) 
+                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Высота брошенного тела:</h4>
+                                
+                                    <img src="static\img\formulas\высота.png" alt="" >
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                            <b>h</b> - высота (м)<br>
+                            <b>t</b> - время (c) <br>
+                            <b>g</b> - ускорение сободного падения (9,8 м/с²) <br>
+                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Дальность броска:</h4>
+                                
+                                    <img src="static\img\formulas\дальность.png" alt="" >
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                            <b>l</b> - дальность полёта<br>
+                            <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                            <b>t</b> - время (c) <br>
+                            <b>cos α</b> - угол броска(α)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                                                    <!-- Уравнения движения -->
+
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                        <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                            <img src="static\img\equation.svg" alt="" class="pr-1">
+                            <h3 class="text-xl font-semibold text-white">Уравнения движения</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">При равномерном движении:</h4>
+                                    
+                                        <img src="static\img\formulas\уравмерн.png" alt="" >
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                        <b>x</b> - конечная координата (м) <br>
+                                        <b>x<sub>0</sub></b> - начальная координата (м) <br>
+                                        <b>υ</b> - скорость (м/с) <br>
+                                        <b>t</b> - время (с)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+    
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">При равноускоренном движении:</h4>
+                                    
+                                        <img src="static\img\formulas\уравускор.png" alt="" >
+                                        
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                        <b>x</b> - конечная координата (м) <br>
+                                        <b>x<sub>0</sub></b> - начальная координата (м) <br>
+                                        <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                                        <b>t</b> - время (с) <br>
+                                        <b>α</b> - ускорение (м/с²)
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">Тело брошенное по углом, по оси X:</h4>
+                                    
+                                        <img src="static\img\formulas\осьX.png" alt="" >
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                        <b>x</b> - конечная координата (м) <br>
+                                        <b>x<sub>0</sub></b> - начальная координата (м) <br>
+                                        <b>υ<sub>x</sub></b> - проекция скорости (м/с) <br>
+                                        <b>t</b> - время (с) <br>
+                                        <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                                        <b>cos α<sub>0</sub></b> - косинус угла броска α<sub>0</sub>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">Тело брошенное по углом, по оси Y:</h4>
+                                    
+                                        <img src="static\img\formulas\осьY.png" alt="" >
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                <b>y</b> - конечная координата (м) <br>
+                                <b>y<sub>0</sub></b> - начальная координата (м) <br>
+                                <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                                <b>t</b> - время (с) <br>
+                                <b>sin α<sub>0</sub></b> — синус угла броска (α<sub>0</sub>)<br>
+                                <b>g</b> - ускорение сободного падения (9,8 м/с²) 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+
+
+
+                                                    <!-- Ускорение -->
+
+
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                        <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                            <img src="static\img\speed-up.svg" alt="" class="pr-1">
+                            <h3 class="text-xl font-semibold text-white">Ускорение</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="">
+                                <div>
+                                    <h4 class="font-bold  mb-2">При равномерном движении:</h4>
+                                    
+                                        <p class="text-center text-7xl">α = 0</p>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+    
+    
+    
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">При равноускоренном движении:</h4>
+                                    
+                                        <img src="static\img\formulas\ускорение.png" alt="" >
+                                        
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                        <b>α</b> - ускорение (м/с²) <br>
+                                        <b>υ</b> - скорость тела (м/с) <br>
+                                        <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                                        <b>t</b> - время (с)
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">При свободном падении:</h4>
+                                    
+                                        <img src="static\img\formulas\ускорение.png" alt="" >
+                                        
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                        <b>α(g) </b>- ускорение (м/с²) <br>
+                                        <b>υ</b> - скорость тела (м/с) <br>
+                                        <b>υ<sub>0</sub></b> - начальная скорость (м/с) <br>
+                                        <b>t</b> - время (с)
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                                                            <!-- Движение по окружности -->
+
+
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                        <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                            <img src="static\img\circle.svg" alt="" class="pr-1">
+                            <h3 class="text-xl font-semibold text-white">Движение по окружности</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">Период:</h4>
+                                    
+                                        <img src="static\img\formulas\период.png" alt="" >
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                        <b>T</b> - период (с) <br>
+                                        <b>t</b> - время (с) <br>
+                                        <b>n</b> - число обротов <br>
+                                        <b>ν<sub>(ню)</sub></b> – частота (Гц) 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+    
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">Частота:</h4>
+                                    
+                                        <img src="static\img\formulas\частота.png" alt="" >
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                        <b>ν<sub>(ню)</sub></b> – частота (Гц) <br>
+                                        <b>T</b> - период (с) <br>
+                                        <b>t</b> - время (с) <br>
+                                        <b>N(n)</b> - число обротов <br>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">Линейная скорость движения материальной точки по окружности:</h4>
+                                    
+                                        <img src="static\img\formulas\линейная.png" alt="" >
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                        <b>υ</b> - линейная скорость (м/с) <br>
+                                        <b>l</b> - длинна окружности (м) <br>
+                                        <b>t</b> - время (с) <br>
+                                        <b>R</b> - радиус окружности (м) <br>
+                                        <b>T</b> - период (с) <br>
+                                        <b>π</b> = 3,14
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                            
+    
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">Угловая скорость:</h4>
+                                    
+                                        <img src="static\img\formulas\угловая.png" alt="" >
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class="backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                <b>ω<sub>(омега)</sub></b> - угловая скорость(рад/с) <br>
+                                <b>ν<sub>(ню)</sub></b> – частота (Гц) <br>
+                                <b>T</b> - период (с) <br>
+                                <b>π</b> = 3,14
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">Зависимость угловой скорости от линейной:</h4>
+                                    
+                                        <img src="static\img\formulas\линугол.png" alt=""  class="h-32 w-31 ml-20">
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class="backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                <b>ω<sub>(омега)</sub></b> - угловая скорость(рад/с) <br>
+                                <b>υ</b> - линейная скорость (м/с) <br>
+                                <b>R</b> - радиус окружности (м)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-bold  mb-2">Центростремительное ускорение:</h4>
+                                    
+                                        <img src="static\img\formulas\центрострим.png" alt=""  class="">
+                                    
+                                </div>
+                                <div>
+                                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                    <div class="backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                        <b>α<sub>цc</sub></b> - центростремительное ускорение (м/с²) <br> 
+                                        <b>υ</b> - линейная скорость (м/с) <br>  
+                                        <b>R</b> - радиус окружности (м)  <br>   
+                                        <b>ω<sub>(омега)</sub></b> - угловая скорость(рад/с) <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                <!-- ДИНАМИКА -->
+
+
+
+
+
+                        <h2 id="dinamica" class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                            <i data-feather="activity" class="mr-2"></i>
+                            Динамика
+                        </h2>   
+                
+
+                                                            <!-- Законы Ньютона -->
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                        <img src="static\img\Newton.svg" alt="" class="pr-1">
+                        <h3 class="text-xl font-semibold text-white">Законы Ньютона</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Первый закон Ньютона:</h4>
+                                <i class="block text-lg  leading-relaxed border-l-4 border-l-4 border-blue-500 pl-2">Тело сохраняет состояние покоя или равномерного прямолинейного движения, если на него не действуют другие тела или действие этих сил скомпенсировано.</i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    F<sub>1</sub> + F<sub>2</sub> + F<sub>3</sub> + ... F<sub>n</sub> = 0
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Второй закон Ньютона:</h4>
+                                
+                                <i class="block text-lg  leading-relaxed border-l-4 border-l-4 border-blue-500 pl-2">Ускорение тела в инерциальной системе отсчёта прямо пропорционально приложенной к нему силе и обратно пропорционально массе.</i>
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <img src="static\img\formulas\закон2.svg" alt="" class="ml-20 mb-3">
+                                    <b>F</b> - равнодействующая сил (н) <br>
+                                    <b>m</b> - масса тела (кг) <br>
+                                    <b>a</b> - ускорение (м/с²)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Третий закон Ньютона:</h4>
+                                
+                                    <i class="block text-lg  leading-relaxed border-l-4 border-l-4 border-blue-500 pl-2">Силы взаимодействия двух материальных точек равны по величине, противоположно направлены, и действуют вдоль прямой, соединяющей эти точки. </i>
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <img src="static\img\formulas\закон3.svg" alt="" class="ml-20">
+                                <b>F<sub>1</sub></b> – сила действующая со стороны первого тела (Н) <br>
+                                <b>F<sub>2</sub></b> – сила действующая со стороны второго тела (Н)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                                                <!-- космическая скорость -->
+
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                        <img src="static\img\space.svg" alt="" class="pr-1">
+                        <h3 class="text-xl font-semibold text-white">Космические скорости</h3>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Первая космическая скорость:</h4>
+                                <img src="static\img\formulas\1космич.png" alt="" >
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <i class="text-lg text-lg  leading-relaxed"> - минимальная скорость, необходимая, чтобы тело стало искусственным спутником планеты и двигалось по круговой орбите у её поверхности (без учёта атмосферы).</i> <br> <hr>
+                                    <b>υ<sub>1</sub></b> - первая космическая (м/с) <br>
+                                    <b>G</b> - гравитационная постоянная <sup>(≈6,67430 x 10<sup>-11</sup> (м<sup>3</sup>•кг<sup>-1</sup>/c<sup>-2</sup>))</sup><br>
+                                    <b></b>M - масса планеты (кг) <br><sup>(для Земли ≈ 5,972 x 10<sup>24</sup> (кг)) </sup><br>
+                                    <b>R</b> - радиус планеты (м) <br><sup>(для Земли ≈ 6,371 x 10<sup>6</sup> (м))</sup> <br>
+                                    Для Земли: <b>v<sub>1</sub></b> ≈ 7,91 км/с.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Вторая космическая скорость:</h4>
+                                <img src="static\img\formulas\2космич.png" alt="" >
+                                <img src="static\img\formulas\2космическая.png" alt="" class="mt-10">
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <i class="text-lg text-lg  leading-relaxed "> - минимальная скорость, позволяющая телу полностью преодолеть гравитацию планеты и уйти в космическое пространство по параболической траектории (без дальнейшего разгона).</i> <br> <hr>
+                                    <b>υ<sub>1</sub></b> - первая космическая (м/с) <br>
+                                    <b>υ<sub>2</sub></b> - вторая космическая (м/с) <br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²) <br>
+                                    <b>G</b> - гравитационная постоянная <sup>(≈6,67430 x 10<sup>-11</sup> (м<sup>3</sup>•кг<sup>-1</sup>/c<sup>-2</sup>))</sup><br>
+                                    <b>M</b> - масса планеты (кг) <br><sup>(для Земли ≈ 5,972 x 10<sup>24</sup> (кг)) </sup><br>
+                                    <b>R(R<sub>з</sub>)</b> - радиус планеты (м) <br><sup>(для Земли ≈ 6,371 x 10<sup>6</sup> (м))</sup> <br>
+                                    Для Земли: <b>v<sub>2</sub></b> ≈ 11,2 км/с.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Третья космическая скорость:</h4>
+                                <img src="static\img\formulas\3космич.png" alt="" >
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <i class="text-lg text-lg  leading-relaxed "> - минимальная скорость, необходимая, чтобы тело, стартуя с Земли, покинуло Солнечную систему (преодолело притяжение и Солнца, и Земли).</i> <br> <hr>
+                                    Для Земли: <b>v<sub>3</sub></b> ≈ 16,65 км/с (значение зависит от направления запуска относительно орбитального движения Земли).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Четвертая космическая скорость:</h4>
+                                <p class="text-5xl mt-10 ">υ<sub>4</sub> = √2 x υ<sub>гал</sub></p> 
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <i class="text-lg text-lg  leading-relaxed "> -  минимальная скорость, чтобы покинуть галактику (преодолеть гравитацию Млечного Пути в окрестности Солнца).</i> <br> <hr>
+                                    <b>υ<sub>4</sub></b> - четвертая космическая(м/с) <br>
+                                    <b>υ<sub>гал</sub></b> - вторая космическая (м/с) <br>
+                                    <b>υ<sub>гал</sub></b> - характерная скорость вращения звёзд в галактике вокруг её центра (м/с) <br><sub>(в окрестности Солнца ≈ 220 км/с)</sub> <br>
+                                    Для окрестности солнца: <br><b> v<sub>4</sub></b> ≈ 550 км/с. <br><sub>(очень приблизительная оценка, так как распределение массы в галактике неоднородно)</sub>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                            <!-- Природные силы -->
+
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                        <img src="static\img\force.svg" alt="" class="pr-1">
+                        <h3 class="text-xl font-semibold text-white">Природные силы</h3>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Сила всемирного тяготения:</h4>
+                                <img src="static\img\formulas\всемир.png" alt="" >
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <b>F</b> - Сила тяготения (н) <br>
+                                    <b>G</b> - гравитационная постоянная <sup>(≈6,67430 x 10<sup>-11</sup> (м<sup>3</sup>•кг<sup>-1</sup>/c<sup>-2</sup>))</sup> <br>
+                                    <b>m<sub>1</sub></b> - масса первого тела (кг) <br>
+                                    <b>m<sub>2</sub></b> - масса первого тела (кг) <br>
+                                    <b>R</b> - расстояние между центрами масс этих тел (м)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Сила тяжести:</h4>
+                                <img src="static\img\formulas\тяж.png" alt="" >
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <b>F</b> - Сила тяжести (н) <br>
+                                    <b>m</b> - масса тела (кг) <br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Сила упругости (закон Гука):</h4>
+                                <img src="static\img\formulas\упруг.png" alt="">
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <b>F<sub>упр</sub></b> - Сила упругости (н) <br>
+                                    <b>k</b> - жёсткость (н/м) <br>
+                                    <b>Δx</b> - абсолютное удлинение (м) <br>
+                                    <b>Δx = Δl = l - l<sub>0</sub></b>  <br>
+                                    <p class=" ml-6"><sub>Δl - изменение длины (м) <br>
+                                        <b>l</b> - конечная длинна (м) <br>
+                                        <b>l<sub>0</sub></b> - начальная длинна (м)</sub></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Cила трения:</h4>
+                                <img src="static\img\formulas\трен.png" alt="">
+                                
+                                
+
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <b>F<sub>тр</sub></b> - Сила трения (н) <br>
+                                    <b>μ<sub>(мю)</sub></b> - коэффициент трения   <br>   
+                                    <b>N</b> - сила нормальной реакции опоры (н) <br>
+                                    <a href="Physics_TABLE.html#table1" class="text-blue-500">(значения μ в таблице)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Cила трения покоя:</h4>
+                                <img src="static\img\formulas\покоя.png" alt="">
+                                
+                                
+
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <b> F<sub>тр.пок</sub></b> - Сила трения покоя (н) <br>
+                                    <b>-F</b> - толкающая сила (н)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Cила трения скольжения:</h4>
+                                <img src="static\img\formulas\силатренияскольжения.png" alt="">
+                                
+                                
+
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <b>F<sub>тр.ск</sub></b> - сила трения скольжения (н) <br>
+                                    <b>μ<sub>(мю)</sub></b> - коэффициент трения  <br>   
+                                    <b>N</b> - сила нормальной реакции опоры (н) <br>
+                                    <b>F
+                                        <table style="display: inline-table; border-spacing: 0; vertical-align: middle;">
+                                            <tr><td style="padding: 0; line-height: 1;">
+                                            <sup style="display: block; margin: 0;">max</sup>
+                                            <sub style="display: block; margin: 0; font-size: 0.7em;">тр.пок</sub>
+                                            </td></tr>
+                                        </table>
+                                    </b>
+                                       - максимальная сила трения покоя (н) <br>
+                                    <a href="Physics_TABLE.html#table1" class="text-blue-500">(значения μ в таблице)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Cила реакции опоры:</h4>
+                                <p class="text-6xl mt-10  font-mono">N = F = mg</p>
+                            
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                                    <b>F</b> - сила (н) <br>
+                                    <b>m</b> - масса (кг)<br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                                            <!-- Вес тела -->
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                        <img src="static\img\Weight.svg" alt="" class="pr-1">
+                        <h3 class="text-xl font-semibold text-white">Вес тела – сила, с которой тело давит на опору или подвес.</h3>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Вес тела в состоянии покоя:</h4>
+                                <img src="static\img\formulas\вес.png" alt="" >
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <b>P</b> - вес тела (н) <br>
+                                    <b>m</b> - масса тела (кг) <br>
+                                    <b>ρ<sub>(ро)</sub></b> - плотность тела  (кг/м³) <br>
+                                    <b>v</b> - объём тела (м³) <br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²)
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Вес тела, движущегося с ускорением вверх:</h4>
+                                <p class="text-5xl mt-10 font-mono">P = m(g + a)</p>
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <b>P</b> - вес тела (н) <br>
+                                    <b>m</b> - масса тела (кг) <br>
+                                    <b>a</b> - ускорение (м/с²) <br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Вес тела, движущегося с ускорением вниз:</h4>
+                                <p class="text-5xl mt-10 font-mono">P = m(g - a)</p>
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <b>P</b> - вес тела (н) <br>
+                                    <b>m</b> - масса тела (кг) <br>
+                                    <b>a</b> - ускорение (м/с²) <br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="">
+                            <div>
+                                <h4 class="font-bold  mb-2">Вес тела при свободном падении:</h4>
+                                <p class="text-center text-7xl my-10">P = 0</p>
+                                
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                                                        <!-- натяжение нити  -->
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                        <img src="static\img\nitka.svg" alt="" class="pr-1">
+                        <h3 class="text-xl font-semibold text-white">Натяжение нити</h3>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">При вертикальном подвесе груза:</h4>
+                                <img src="static\img\formulas\вертикнатяж.png" alt="" >
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <b>T</b> - натяжение нити (н) <br>
+                                    <b>m</b> - масса груза (кг) <br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²)
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Если система движется с ускорением вверх:</h4>
+                                <p class="text-6xl mt-10 font-semibold">T = m(g + a)</p>
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <b>Т</b> - натяжение нити (н) <br>
+                                    <b>m</b> - масса груза (кг) <br>
+                                    <b>a</b> - ускорение (м/с²) <br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Если система движется с ускорением вниз:</h4>
+                                <p class="text-6xl mt-10 font-semibold">T = m(g - a)</p>
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <b>Т</b> - натяжение нити (н) <br>
+                                    <b>m</b> - масса груза (кг) <br>
+                                    <b>a</b> - ускорение (м/с²) <br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Подвешенный груз действует на нить под углом :</h4>
+                                <p class="text-5xl mt-10 font-semibold">T = mg × cos α</p>
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <b>T</b> - натяжение нити (н) <br>
+                                    <b>m</b> - масса груза (кг) <br>
+                                    <b>cos α</b> - угол отклонения <br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold  mb-2">Если действует сила Архимеда:</h4>
+                                <p class="text-6xl mt-10 font-semibold">T = mg - F<sub>A</sub></p>
+                                
+                                
+                            </div>
+                            <div>
+                                <h4 class="font-bold  mb-2">Пояснение:</h4>
+                                <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                                    <b>Т</b> - натяжение нити (н) <br>
+                                    <b>m</b> - масса груза (кг) <br>
+                                    <b>F<sub>A</sub></b> - сила Архимеда (н)<br>
+                                    <b>g</b> - ускорение свободного падения (9,8 м/с²)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                </div>
+                
+
+
+
+
+
+                                                    <!-- Статика -->
+
+
+
+
+                <h2 id="statica" class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <img src="static\img\static.svg" alt="" class="mr-1 mt-2">
+                    Статика
+                </h2>   
+        
+
+                                                    <!-- Условия равновесия -->
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+            <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                <img src="static\img\balance.svg" alt="" class="pr-1">
+                <h3 class="text-xl font-semibold text-white">Условия равновесия</h3>
+            </div>
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Первое условие:</h4>
+                        <i class="block text-lg  leading-relaxed border-l-4 border-l-4 border-blue-500 pl-2">Сумма всех внешних сил, действующих на тело, должна быть равна нулю.</i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                            F<sub>1</sub> + F<sub>2</sub> + F<sub>3</sub> + ... F<sub>n</sub> = 0
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Второе условие:</h4>
+                        
+                        <i class="block text-lg  leading-relaxed border-l-4 border-l-4 border-blue-500 pl-2">Второе условие равновесия твёрдого тела записывается как алгебраическая сумма всех моментов сил, действующих на тело, равна нулю.</i>
+                        
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                            M<sub>1</sub> + M<sub>2</sub> + M<sub>3</sub> + ... M<sub>n</sub> = 0
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Условие равновесия рычага:</h4>
+                        
+                        <img src="static\img\formulas\условиеравновесия.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>F<sub>1,2</sub></b> - силы (н) <br>
+                        <b>l<sub>1,2</sub></b> - плечи сил (м)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Момент силы:</h4>
+                        
+                        <img src="static\img\formulas\моментсил.png" alt="">
+                        
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>M</b> - момент силы (Н•м) <br>
+                        <b>F</b> - сила (н) <br>
+                        <b>l</b> - плечо силы (м) 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Момент инерции материальной точки:</h4>
+                        
+                        <img src="static\img\formulas\инерц.png" alt="">
+                        
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>J</b> - момент инерции (кг · м²) <br>
+                        <b>m</b> - масса точки (кг) <br>
+                        <b>r</b> - расстояние до оси вращения (м) 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+                                                    <!--  Законы сохранения -->
+
+
+                <h2 id="laws-of-save" class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i data-feather="shield" class="mr-2 mt-1 "></i>
+                    Законы сохранения
+                </h2>   
+        
+
+                                                    <!-- Механическая энергия -->
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+            <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                <img src="static\img\energy.svg" alt="" class="pr-1">
+                <h3 class="text-xl font-semibold text-white">Механическая энергия</h3>
+            </div>
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Полная механическая энергия:</h4>
+                        <p class="text-7xl mt-10  font-mono font-medium">Е<sub>мех</sub>=Е<sub>к</sub>+Е<sub>п</sub></p>       
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>E<sub>к</sub></b> - кинетическая энергия (Дж) <br>
+                        <b>E<sub>п</sub></b> - потенциальная энергия (Дж)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Закон сохранения энергии:</h4>
+                        <p class="text-5xl mt-10  font-mono font-medium">Е<sub>к1</sub>+Е<sub>п1</sub>=Е<sub>к2</sub>+Е<sub>п2</sub></p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>E<sub>к</sub></b> - кинетическая энергия (Дж) <br>
+                        <b>E<sub>п</sub></b> - потенциальная энергия (Дж)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Потенциальная энергия в поле гравитации:</h4>
+                        
+                        <img src="static\img\formulas\потенцподнят.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>E<sub>п</sub></b> - потенциальная энергия (Дж)   <br>
+                        <b>m</b> - масса тела (кг) <br>
+                        <b>h</b> - высота (м) <br>
+                        <b>g</b> - ускорение свободного падения (м/с²)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Потенциальная энергия у пружины:</h4>
+                        
+                        <img src="static\img\formulas\потенцупруг.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>E<sub>п</sub></b> - потенциальная энергия (Дж) <br> 
+                        <b>k</b> - жёсткость (н/м) <br>
+                        <b>x</b> - удлинение (м) <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Кинетическая энергия:</h4>
+                        
+                        <img src="static\img\formulas\кинетич.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                        <b>E<sub>к</sub></b> - кинетическая энергия (Дж)  <br> 
+                        <b>m</b> - масса тела (кг) <br>
+                        <b>υ</b> - скорость тела (м/с) <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Работа потенциальной энергии:</h4>
+                        <img src="static\img\formulas\работапот.png" alt="">       
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>А</b> - работа (Дж) <br>
+                        <b>E<sub>п<sub>1</sub></sub></b> - потенциальная энергия в начальном состоянии (Дж) <br>
+                        <b>E<sub>п<sub>2</sub></sub></b> - потенциальная энергия в конечном состоянии (Дж) 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Работа кинетической энергии:</h4>
+                        <img src="static\img\formulas\работакин.png" alt="">       
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                            <b>А</b> - работа (Дж) <br>
+                            <b>E<sub>к<sub>1</sub></sub></b> - кинетическая энергия в начальном состоянии (Дж) <br>
+                            <b>E<sub>к<sub>2</sub></sub></b> - кинетическая энергия в конечном состоянии (Дж)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+            <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                <img src="static\img\impulse.svg" alt="" class="pr-1">
+                <h3 class="text-xl font-semibold text-white">Импульс тела</h3>
+            </div>
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Импульс тела:</h4>
+                        <img src="static\img\formulas\импульс.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>P</b> - импульс (кг • м/с) <br>
+                        <b>m</b> - масса тела (кг) <br>
+                        <b>υ</b> - скорость тела (м/с)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Импульс силы:</h4>
+                        <img src="static\img\formulas\импсилы.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>ΔP</b> - изменение импульса (кг • м/с) <br>
+                        <b>F</b> - сила (н) <br>
+                        <b>Δt</b> - время (с)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Закон сохранения импульса:</h4>
+                        <img src="static\img\formulas\сохримпульс.png" alt="">       
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>p<sub>1</sub>, p<sub>2</sub></b> - импульс тел до взаимодействия (кг • м/с) <br>
+                        <b>p<sub>1</sub><sup>`</sup>,  p<sub>2</sub><sup>`</sup></b> - импульс тел после взаимодействия (кг • м/с) 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Момент импульса:</h4>
+                        <img src="static\img\formulas\моментимпульса.png" alt="">       
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>L</b> - момент импульса (кг · м²/с) <br>
+                        <b>m</b> - масса материальной точки (кг) <br>
+                        <b>v</b> - линейная скорость точки (м/с) <br>
+                        <b>r</b> - радиус окружности (м)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+                                            <!-- Механическая работа -->
+
+
+
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+            <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                <img src="static\img\mechwork.svg" alt="" class="pr-1">
+                <h3 class="text-xl font-semibold text-white">Механическая работа</h3>
+            </div>
+        
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Механическая работа трения:</h4>
+                        
+                        <img src="static\img\formulas\работатр.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                        <b>А</b> - работа трения (Дж)  <br>  
+                        <b>F<sub>тр</sub></b> - сила трения (н) <br>
+                        <b>Δr</b> -  перемещение тела (м) 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2 ">Мех.работа, при α = 0°:</h4>
+                        <img src="static\img\formulas\работа.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>А</b> - работа (Дж)  <br>
+                        <b>F</b> - сила (н) <br>
+                        <b>S</b> - перемещение (м) <br>
+                        <b>α</b> - угол между F и S 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2 ">Мех.работа, при 0° &lt α &lt 90°: </h4>
+                        <img src="static\img\formulas\работа0-90.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                        <b>А</b> - работа (Дж)  <br>
+                        <b>F</b> - сила (н) <br>
+                        <b>S</b> - перемещение (м) <br>
+                        <b>α</b> - угол между F и S 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2 ">Мех.работа, при α = 90°: </h4>
+                        <img src="static\img\formulas\работа90.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>А</b> - работа (Дж)  <br>
+                        <b>α</b> - угол между F и S 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2 ">Мех.работа, при 90° &lt α &lt 180°:</h4>
+                        <img src="static\img\formulas\работа90-180.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>А</b> - работа (Дж)  <br>
+                        <b>F</b> - сила (н) <br>
+                        <b>S</b> - перемещение (м) <br>
+                        <b>α</b> - угол между F и S 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2 ">Мех.работа, при α = 180°:</h4>
+                        <img src="static\img\formulas\работа180.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>А</b> - работа (Дж)  <br>
+                        <b>F</b> - сила (н) <br>
+                        <b>S</b> - перемещение (м) <br>
+                        <b>α</b> - угол между F и S 
+                        </div>
+                    </div>
+                </div>
+            </div>ек
+
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2 ">Мощность:</h4>
+                        <img src="static\img\formulas\мощность.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>N</b> - мощность (Вт) <br>    
+                        <b>А</b> - работа (Дж)  <br>
+                        <b>t</b> - время (с)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2 ">Мощность мгновения:</h4>
+                        <img src="static\img\formulas\мощностьмгн.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>N</b> - мощность (Вт) <br>
+                        <b>F</b> - сила (н) <br>
+                        <b>υ</b> - скорость (м/с)  <br>
+                        <b>α</b> - угол между F и υ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+                                                    <!--  Мех.колебания и волны -->
+
+
+
+
+
+
+
+                <h2 id="mechanical-wawes" class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                    <img src="static\img\wave.svg" alt="" class="mr-1">
+                    Механические колебания и волны
+                </h2>   
+        
+
+                                                    <!-- Хар-ки мех.колеб -->
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+            <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                <img src="static\img\mechkoleb.svg" alt="" class="pr-1">
+                <h3 class="text-xl font-semibold text-white">Характеристики механических колебаний</h3>
+            </div>
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Период:</h4>
+                        
+                            <img src="static\img\formulas\период.png" alt="" >
+                        
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2 ">
+                            <b>T</b> - период (с) <br>
+                            <b>t</b> - время (с) <br>
+                            <b>n</b> - число обротов <br>
+                            <b>ν<sub>(ню)</sub></b> – частота (Гц) 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Частота:</h4>
+                        
+                            <img src="static\img\formulas\частота.png" alt="" >
+                        
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                            <b>ν<sub>(ню)</sub></b> – частота (Гц) <br>
+                            <b>T</b> - период (с) <br>
+                            <b>t</b> - время (с) <br>
+                            <b>N(n)</b> - число обротов <br>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Циклическая частота:</h4>
+                        
+                            <img src="static\img\formulas\угловая.png" alt="" >
+                        
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class="backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                    <b>ω<sub>(омега)</sub></b> - циклическая частота (рад/с) <br>
+                    <b>ν<sub>(ню)</sub></b> – частота (Гц) <br>
+                    <b>T</b> - период (с) <br>
+                    <b>π</b> = 3,14
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+            <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                <img src="static\img\metronom.svg" alt="" class="pr-1">
+                <h3 class="text-xl font-semibold text-white">Маятники</h3>
+            </div>
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Период математического маятника:</h4>
+                        
+                            <img src="static\img\formulas\матеммая.png" alt="" >
+                        
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                            <b>T</b> - период (с) <br>
+                            <b>π</b> = 3,14 <br>
+                            <b>ω</b> - циклическая частота (рад/с) <br>
+                            <b>l</b> - длинна нити (м) <br>
+                            <b>g</b> - ускорение свободного падения (9,8 м/с²)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Период пружинного маятника:</h4>
+                        
+                            <img src="static\img\formulas\пружинмая.png" alt="" >
+                        
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                            <b>T</b> - период (с) <br>
+                            <b>π</b> = 3,14 <br>
+                            <b>ω</b> - циклическая частота (рад/с) <br>
+                            <b>m</b> - масса груза (кг) <br>
+                            <b>k</b> - жесткость пружины (н/м)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Полная механическая энегрия маятника</h4>
+                        
+                            <img src="static\img\formulas\мехэнермаг.png" alt="" >
+                            <img src="static\img\formulas\мехэнермаг2.png" alt="" >
+                        
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>E</b> - механическая энегрия маятника (Дж) <br> 
+                        <b>m</b> - масса тела (кг) <br>
+                        <b>υ</b> - скорость тела (м/с) <br>
+                        <b>k</b> - жёсткость пружины (н/м) <br>
+                        <b>x</b> - удлинение пружины (м) <br>
+                        <b>υ<sub>max</sub></b> - скорость тела(амплитуда) (м/с) <br>
+                        <b>x<sub>max</sub></b> - удлинение пружины(амплитуда) (м) <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Резонанс:</h4>
+                        <div>
+                        <i  class="block text-lg  leading-relaxed pl-2">Условие резонанса:</i>
+                        <p class="text-6xl mt-2 mb-6 ml-2  font-mono">ν<sub>соб</sub> = ν<sub>вын</sub></p>
+                        <b>ν<sub>соб</sub></b> – собственная частота системы (Гц) <br>
+                        <b>ν<sub>вын</sub></b> – частота вынужденных колебаний (Гц)
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class="backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <i class="block text-lg  leading-relaxed pl-2"> -  это резкое возрастание амплитуды вынужденных колебаний системы при совпадении частоты вынуждающей силы с собственной частотой колебаний системы.</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Гармонические колебания(координата тела):</h4>
+                        <img src="static\img\formulas\гармонич.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class="backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>x</b> - координата тела (м) <br>
+                        <b>A</b> - амплитуда колебаний  <br>
+                        <b>ω<sub>0</sub></b> - циклическая частота (рад/с)<br>
+                        <b>t</b> - время (с) <br>
+                        <b>φ <sub>(фи)</sub></b> — начальная фаза (рад) <br>
+                        <b>(ωt + φ)</b> - фаза колебания (рад) <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Гармонические колебания(координата скорости)</h4>
+                        <img src="static\img\formulas\скоростпригармон.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class="backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>υ<sub>x</sub></b> - координата скорости (м/с) <br>
+                        <b>A</b> - амплитуда колебаний  <br>
+                        <b>ω</b> - циклическая частота (рад/с)<br>
+                        <b>ωA = υ<sub>max</sub> <br></b> 
+                        <b>t</b> - время (с) <br>
+                        <b>φ<sub>0</sub><sub>(фи)</sub></b> - начальная фаза (рад) <br>
+                        <b>(ωt + φ)</b> - фаза колебания (рад) <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Гармонические колебания(координата ускорения)</h4>
+                        <img src="static\img\formulas\ускорпригармон.png" alt="">
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class="backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>α<sub>x</sub></b> - координата ускорения (м/с) <br>
+                        <b>A</b> - амплитуда колебаний  <br>
+                        <b>ω</b> - циклическая частота (рад/с)<br>
+                        <b>ω<sup>2</sup>A = α<sub>max</sub> <br></b> 
+                        <b>t</b> - время (с) <br>
+                        <b>φ<sub>0</sub><sub>(фи)</sub></b> - начальная фаза (рад) <br>
+                        <b>(ωt + φ)</b> - фаза колебания (рад) <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+            <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+                <img src="static\img\wave1.svg" alt="" class="pr-1">
+                <h3 class="text-xl font-semibold text-white">Механические волны</h3>
+            </div>
+            <div class="p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold  mb-2">Скорость волны:</h4>
+                        
+                            <img src="static\img\formulas\скорволн.png" alt="" >
+                        
+                    </div>
+                    <div>
+                        <h4 class="font-bold  mb-2">Пояснение:</h4>
+                        <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>υ</b> - скорость волны (м/с)  <br>
+                        <b>λ</b> - длинна волны (м) <br>
+                        <b>T</b> - период (с) <br>
+                        <b>ν</b> – частота (Гц) 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+            <h2 id="hydrostatic" class="text-3xl font-bold text-gray-800 mb-6  flex items-center">
+                <img src="static\img\droplet.svg" alt="" class="mt-1">
+                Гидростатика и аэростатика
+            </h2>   
+    
+
+                                                <!-- Хар-ки мех.колеб -->
+
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+        <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+            <img src="static\img\hydropressure.svg" alt="" class="pr-1">
+            <h3 class="text-xl font-semibold text-white">Давление жидкостей и газов</h3>
+        </div>
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold  mb-2">Закон Паскаля для жидкостей:</h4>
+                    
+                        <img src="static\img\formulas\гидродавление.png" alt="" >
+                    
+                </div>
+                <div>
+                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <i class="block text-lg  leading-relaxed "> - гидростатическое давление, которое оказывает столб жидкости на дно и стенки сосуда.</i> <hr>
+                        <b>p</b> - давление (Па) <br>
+                        <b>ρ<sub>(ро)</sub></b> - плотность жидкости (кг/м³)<br>
+                        <b>h</b> - высота столба жидкости (м)<br>
+                        <b>g</b> - ускорение свободного падения (9,8 м/с²) <br>
+                        <a href="Physics_TABLE.html#table2" class="text-blue-500">(значения <b>ρ</b>в таблице)</a>   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold  mb-2">Закон Паскаля для газов:</h4>
+                    
+                        <img src="static\img\formulas\законпаскаля.png" alt="" >
+                    
+                </div>
+                <div>
+                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <i class="block text-lg  leading-relaxed "> - гидростатическое давление, которое оказывает столб жидкости на дно и стенки сосуда.</i> <hr>
+                        <b>p</b> - давление (Па) <br>
+                        <b>F</b> - приложенная сила (н)<br>
+                        <b>S</b> - площадь поверхности/сосуда (м²)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold  mb-2">Полное давление в любой точке жидкости:</h4>
+                    
+                        <img src="static\img\formulas\полноедавл.png" alt="" >
+                    
+                </div>
+                <div>
+                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>p</b> - давление жидкости (Па) <br>
+                        <b>p<sub>0</sub></b> - давление на её свободной поверхности (Па) <br>
+                        <b>ρ<sub>(ро)</sub></b> - плотность жидкости (кг/м³)<br>
+                        <b>g</b> - ускорение свободного падения (9,8 м/с²) <br>
+                        <b>h</b> - высота столба жидкости (м)<br>
+                        <a href="Physics_TABLE.html#table2" class="text-blue-500">(значения <b>ρ</b> в таблице)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                                                                <!-- Сила газов и жидкостей  -->
+
+
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+        <div class="flex  bg-gradient-to-r from-[#1a0dab] to-[#7a43f5] px-6 py-3">
+            <img src="static\img\Gas.svg" alt="">
+            <h3 class="text-xl font-semibold text-white mt-1">Сила жидкостей и газов</h3>
+        </div>
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold  mb-2">Сила давления на дно сосуда:</h4>
+                    
+                        <img src="static\img\formulas\давлениенадно.png" alt="" >
+                    
+                </div>
+                <div>
+                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>F</b> - приложенная сила (н)<br>
+                        <b> ρ<sub>(ро)</sub></b> - плотность жидкости (кг/м³)<br>
+                        <b>g</b> - ускорение свободного падения (9,8 м/с²) <br>
+                        <b>h</b> - высота столба жидкости (м)<br>
+                        <b>S<sub>д</sub></b> - площадь дна сосуда (м²) <br>
+                        <a href="Physics_TABLE.html#table2" class="text-blue-500">(значения <b>ρ</b> в таблице)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold  mb-2">Сила давления на стенки сосуда:</h4>
+                    
+                        <img src="static\img\formulas\силанастенки.png" alt="" >
+                    
+                </div>
+                <div>
+                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                        <b>F</b> - приложенная сила (н)<br>
+                        <b>ρ<sub>(ро)</sub></b> - плотность жидкости (кг/м³)<br>
+                        <b>h</b> - высота столба жидкости (м)<br>
+                        <b>g</b> - ускорение свободного падения (9,8 м/с²) <br>
+                        <b>S<sub>ст</sub></b> - площадь стенок сосуда (м²) <br>
+                        <a href="Physics_TABLE.html#table2" class="text-blue-500">(значения <b>ρ</b> в таблице)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold  mb-2">Соотношение сил в гидравлическом прессе:</h4>
+                    
+                        <img src="static\img\formulas\соотношсил.png" alt="" >
+                    
+                </div>
+                <div>
+                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                    <b>F<sub>1</sub></b> - сила, действующая на первый (обычно больший) поршень (н) <br>
+                    <b>S<sub>1</sub></b> - площадь первого поршня (м²)<br>
+                    <b>F<sub>2</sub></b>  - сила, приложенная ко второму (обычно меньшему) поршню (н)<br>
+                    <b>S<sub>2</sub></b> - площадь второго поршня (м²)<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold  mb-2">Закон Архимеда, если тело плавает:</h4>
+                    
+                        <img src="static\img\formulas\законарихимеда.png" alt="" >
+                    
+                </div>
+                <div>
+                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2">
+                    <b>F<sub>A</sub></b> - сила Архимеда (н) <br>
+                    <b>ρ<sub>(ро)</sub></b> - плотность жидкости (кг/м³)<br>
+                    <b>g</b> - ускорение свободного падения (9,8 м/с²) <br>
+                    <b>V</b> - объём тела (м³) <br>
+                    <a href="Physics_TABLE.html#table2" class="text-blue-500">(значения <b>ρ</b> в таблице)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="p-6">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-bold  mb-2">Закон Архимеда, если тело полностью погруженно:</h4>
+                    
+                    <i class="text-6xl mt-12 ml-12">F<sub>A</sub> = mg</i>
+                    
+                </div>
+                <div>
+                    <h4 class="font-bold  mb-2">Пояснение:</h4>
+                    <div class=" backdrop-blur-sm bg-white/80 border border-gray-200/40 rounded-xl p-4 shadow-md space-y-2   ">
+                    <b>F<sub>A</sub></b> - сила Архимеда (н) <br>
+                    <b>m</b> - масса тела (кг) <br>
+                    <b>g</b> - ускорение свободного падения (9,8 м/с²) <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+    
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <footer class="bg-[#1E293B] text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <img src="static\img\logo.png" alt="" class=" h-8 w-8">
+                        <span class="text-xl font-bold">VseFormuly</span>
+                    </div>
+                    <p class=" mt-2">Ваш помощник в изучении формул.</p>
+                    <i class="text-[0.7rem] text-gray-400">*Этот сайт не собирает персональные данные посетителей. Имеются ссылки на внешние ресурсы (Telegram и др.), политика конфиденциальности которых регулируется их владельцами.</i>
+                </div>
+                <div class="flex space-x-2">
+                    
+                    <a href="https://t.me/VseFormuly" class="text-gray-400 hover:text-white transition" title = 'Телеграм'>
+                        <img src="static\img\telegram.svg" alt="">
+                    </a>
+                    <a href="https://vk.com/vseformulys" class="text-gray-400 hover:text-white transition" title = 'ВКонтакте'>
+                        <img src="static\img\vk.svg" alt="">
+                    </a>
+                    <sup class="text-xl">*</sup>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center ">
+                <p>© 2025 VseFormuly. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+            document.getElementById('menu-toggle').addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            });
+    </script>
+    <script>
+        feather.replace();
+    </script>
+         <script>
+            document.querySelectorAll('.dropdown-parent').forEach(parent => {
+                parent.addEventListener('click', () => {
+                    parent.querySelector('.dropdown-menu').style.display = 'block';
+                });
+                parent.addEventListener('mouseleave', () => {
+                    parent.querySelector('.dropdown-menu').style.display = 'none';
+                });
+            });
+        </script>
+        <script>
+            document.querySelectorAll('.dropdown-parent').forEach(parent => {
+                parent.addEventListener('click', () => {
+                    parent.querySelector('.dropdown-menu1').style.display = 'block';
+                });
+                parent.addEventListener('mouseleave', () => {
+                    parent.querySelector('.dropdown-menu1').style.display = 'none';
+                });
+            });
+        </script>
+        <script >   
+        
+        
+            const snowToggle = document.getElementById('snowToggle');
+            let snowflakes = [];
+            let snowIntervalId = null;
+
+        
+            function createSnowflake() {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = '❄'; // или SVG‑иконка
+                snowflake.style.left = Math.random() * window.innerWidth + 'px';
+                snowflake.style.animationDuration = Math.random() * 10 + 5 + 's';
+                document.body.appendChild(snowflake);
+                snowflakes.push(snowflake);
+        
+                
+                setTimeout(() => {
+                    snowflake.remove();
+                    const index = snowflakes.indexOf(snowflake);
+                    if (index > -1) snowflakes.splice(index, 1);
+                }, 15000);
+            }
+    
+            function startSnow() {
+        if (!snowToggle.checked) return;
+        snowIntervalId = setInterval(createSnowflake, 800);
+    }
+    
+    function stopSnow() {
+        clearInterval(snowIntervalId);
+        snowIntervalId = null;
+        snowflakes.forEach(flake => flake.remove());
+        snowflakes = [];
+    }
+    
+    snowToggle.addEventListener('change', () => {
+        if (snowToggle.checked) {
+            startSnow();
+            localStorage.setItem('snowEnabled', 'true');
+        } else {
+            stopSnow();
+            localStorage.setItem('snowEnabled', 'false');
+        }
+    });
+    
+    window.addEventListener('load', () => {
+        const isSnowOn = localStorage.getItem('snowEnabled') === 'true';
+        snowToggle.checked = isSnowOn;
+        if (isSnowOn) startSnow();
+        else stopSnow();
+    });
+        
+        </script>
+</body>
+</html>

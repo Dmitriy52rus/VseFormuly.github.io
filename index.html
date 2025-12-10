@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="keywords"
+    content="Физика, цт, цэ, егэ, огэ, экзамен, сдать, VseFormuly, Все формулы по физике, 100 баллов, 100цт, формулы по физике для цт / цэ / егэ / огэ, все формулы, подготовка к экзамену, репетитор по физики, сборник формул по физике, формулы, Физика, Математика, Профмат, база, базовая математика, профильная математика, 100 баллов егэ физика, 100 баллов егэ Математика" />
+    <link rel="shortcut icon" href="static\img\logo.png">
+    <title>VseFormuly - Все формулы под рукой</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="flex space-x-2"><img src="static\img\logo.png" alt="" class=" h-8 w-8">
+                    <span class="text-xl font-bold text-dark">VseFormuly</span></a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="physics.html" class="text-dark hover:text-blue-600 transition">Физика</a>
+                    <a href="basic_math.html" class="text-dark hover:text-emerald-600 transition ">Базовая математика</a>
+                    <a href="advanced_math.html" class="text-dark hover:text-purple-600 transition">Профильная математика</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i data-feather="menu" class="h-6 w-6 text-dark"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-white py-2 px-4 shadow-lg" id="mobile-menu">
+            <a href="physics.html" class="block py-2 text-dark hover:text-primary transition">Физика</a>
+            <a href="basic_math.html" class="block py-2 text-dark hover:text-primary transition">Базовая математика</a>
+            <a href="advanced_math.html" class="block py-2 text-dark hover:text-primary transition">Профильная математика</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <section class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">Все формулы в одном месте</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Быстрый доступ к самым важным формулам по физике, базовой и профильной математике. Учись эффективнее!</p>
+        </section>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div id="physics" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl  ">
+                <div class="p-6">
+                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 mx-auto">
+                        <img src="static\img\atom1.svg" alt="">
+                    </div>
+                    <h2 class="text-2xl font-bold text-center text-dark mb-3">Физика</h2>
+                    <p class="text-gray-600 text-center mb-4">Основные формулы механики, термодинамики, электродинамики и оптики.</p>
+                    <a href="physics.html" class="block w-full py-2 px-4 bg-primary hover:bg-blue-600 text-white font-medium rounded-lg text-center transition">Перейти к формулам</a>
+                </div>
+            </div>
+
+            <div id="basic_math" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl relative">
+                <div class=" bg-red-500 text-white px-4 py-2 rounded-t-lg shadow-lg text-sm font-medium flex items-center justify-center relative top-0 left-0 right-0">
+                    <i data-feather="alert-triangle" class="w-5 h-5 mr-2"></i>
+                    <span>В РАЗРАБОТКЕ</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4 mx-auto">
+                        <img src="static\img\plus.svg" alt="">
+                    </div>
+                    <h2 class="text-2xl font-bold text-center text-dark mb-3">Базовая математика</h2>
+                    <p class="text-gray-600 text-center mb-10">Формулы алгебры, геометрии и тригонометрии для базового уровня.</p>
+                    <a href="basic_math.html" class="block w-full py-2 px-4 bg-secondary hover:bg-emerald-600 text-white font-medium rounded-lg text-center transition">Перейти к формулам</a>
+                </div>
+            </div>
+
+            <div id="advanced_math" class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl  relative">
+                <div class="bg-red-500 text-white px-4 py-2 rounded-t-lg shadow-lg text-sm font-medium flex items-center justify-center relative top-0 left-0 right-0">
+                    <i data-feather="alert-triangle" class="w-5 h-5 mr-2"></i>
+                    <span>В РАЗРАБОТКЕ</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4 mx-auto">
+                        <img src="static\img\advanc.svg" alt="">
+                    </div>
+                    <h2 class="text-2xl font-bold text-center text-dark mb-3">Профильная математика</h2>
+                    <p class="text-gray-600 text-center mb-4">Продвинутые формулы математического анализа, стереометрии и теории вероятностей.</p>
+                    <a href="advanced_math.html" class="block w-full py-2 px-4 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-lg text-center transition">Перейти к формулам</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-8 mt-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <img src="static\img\logo.png" alt="" class=" h-8 w-8">
+                        <span class="text-xl font-bold">VseFormuly</span>
+                    </div>
+                    <p class=" mt-2">Ваш помощник в изучении формул.</p>
+                    <i class="text-[0.7rem] text-gray-400">*Этот сайт не собирает персональные данные посетителей. Имеются ссылки на внешние ресурсы (Telegram и др.), политика конфиденциальности которых регулируется их владельцами.</i>
+                </div>
+                <div class="flex space-x-2">
+                    
+                    <a href="https://t.me/VseFormuly" class="text-gray-400 hover:text-white transition" title = 'Телеграм'>
+                        <img src="static\img\telegram.svg" alt="">
+                    </a>
+                    <a href="https://vk.com/vseformulys" class="text-gray-400 hover:text-white transition" title = 'ВКонтакте'>
+                        <img src="static\img\vk.svg" alt="">
+                    </a>
+                    <sup class="text-xl">*</sup>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center ">
+                <p>© 2025 VseFormuly. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
