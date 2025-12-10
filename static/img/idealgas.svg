@@ -1,0 +1,12 @@
+<svg id="Chart-Logistic-Regression--Streamline-Carbon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="24" width="24">
+  <desc>
+    Chart Logistic Regression Streamline Icon: https://streamlinehq.com
+  </desc>
+  <defs></defs>
+  <path d="M12 11a1 1 0 1 0 2 0 1 1 0 1 0 -2 0" fill="#ffffff" stroke-width="0.5"></path>
+  <path d="M9 11a1 1 0 1 0 2 0 1 1 0 1 0 -2 0" fill="#ffffff" stroke-width="0.5"></path>
+  <path d="M6 3a1 1 0 1 0 2 0 1 1 0 1 0 -2 0" fill="#ffffff" stroke-width="0.5"></path>
+  <path d="M3 3a1 1 0 1 0 2 0 1 1 0 1 0 -2 0" fill="#ffffff" stroke-width="0.5"></path>
+  <path d="M4.11695 12c1.93995 0 3.6555 -1.23655 4.26915 -3.07715l1.1765 -3.52955C10.03975 3.9619 11.37425 3 12.88305 3H15V2h-2.11695c-1.93995 0 -3.6555 1.23655 -4.26915 3.07715l-1.1765 3.52955C6.96025 10.0381 5.62575 11 4.11695 11H2V1H1v13c0 0.55125 0.4485 1 1 1h13v-1H2v-2h2.11695Z" fill="#ffffff" stroke-width="0.5"></path>
+  <path id="_Transparent_Rectangle_" d="M0 0h16v16H0Z" fill="none" stroke-width="0.5"></path>
+</svg>
