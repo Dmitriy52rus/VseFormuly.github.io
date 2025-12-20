@@ -18,27 +18,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
-    <meta name="keywords"
-    content="Физика, цт, цэ, егэ, огэ, экзамен, сдать, VseFormuly, Все формулы по физике, 100 баллов, 100цт, формулы по физике для цт / цэ / егэ / огэ, все формулы, подготовка к экзамену, репетитор по физики, сборник формул по физике, формулы, Физика, Математика, Профмат, база, базовая математика, профильная математика, 100 баллов егэ физика, 100 баллов егэ Математика" />
+    <meta name="title" content="Allformuls">
+    <meta name="description" content="«Allformuls» — собрание формул по физике и математике для подготовки к ОГЭ, ЕГЭ.">
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <title>VseFormuly - Все формулы под рукой</title>
+    <title>Allformuls - собрание формул по физике и математике для подготовки к ОГЭ, ЕГЭ.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#10B981',
-                        dark: '#1E293B',
-                        light: '#F8FAFC'
-                    }
-                }
-            }
-        }
-    </script>
+
 </head>
 <body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
     
@@ -46,29 +33,21 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-4">
-                    <a href="index.html" class="flex space-x-2"><img src="static\img\logo.png" alt="" class=" h-8 w-8">
-                    <span class="text-xl font-bold text-dark">VseFormuly</span></a>
+                    <a href="index.html" class="flex space-x-2"><img src="logo.png" alt="" class=" h-8 w-8">
+                        <span class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-pulse">Allformuls</span></a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="physics.html" class="text-dark hover:text-blue-600 transition">Физика</a>
-                    <a href="basic_math.html" class="text-dark hover:text-emerald-600 transition ">Базовая математика</a>
-                    <a href="advanced_math.html" class="text-dark hover:text-purple-600 transition">Профильная математика</a>
+                    <a href="physics.html" class="text-[#1E293B] hover:text-blue-600 transition relative inline-block group">Физика<span class="absolute left-0 bottom-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="basic_math.html" class="text-[#1E293B] hover:text-emerald-600 transition relative inline-block group">Базовая математика<span class="absolute left-0 bottom-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 group-hover:w-full"></span></a>
+                    <a href="advanced_math.html" class="text-[#1E293B] hover:text-purple-600 transition relative inline-block group">Профильная математика<span class="absolute left-0 bottom-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"></span></a>
                 </div>
-                <button class="md:hidden focus:outline-none" id="menu-toggle">
-                    <i data-feather="menu" class="h-6 w-6 text-dark"></i>
-                </button>
             </div>
-        </div>
-        <div class="md:hidden hidden bg-white py-2 px-4 shadow-lg" id="mobile-menu">
-            <a href="physics.html" class="block py-2 text-dark hover:text-primary transition">Физика</a>
-            <a href="basic_math.html" class="block py-2 text-dark hover:text-primary transition">Базовая математика</a>
-            <a href="advanced_math.html" class="block py-2 text-dark hover:text-primary transition">Профильная математика</a>
         </div>
     </nav>
 
     <main class="max-w-6xl mx-auto px-4 py-12">
         <section class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">Все формулы в одном месте</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-[#1E293B] mb-4">Все формулы в одном месте</h1>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">Быстрый доступ к самым важным формулам по физике, базовой и профильной математике. Учись эффективнее!</p>
         </section>
 
@@ -78,9 +57,9 @@
                     <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4 mx-auto">
                         <img src="static\img\atom1.svg" alt="">
                     </div>
-                    <h2 class="text-2xl font-bold text-center text-dark mb-3">Физика</h2>
-                    <p class="text-gray-600 text-center mb-4">Основные формулы механики, термодинамики, электродинамики и оптики.</p>
-                    <a href="physics.html" class="block w-full py-2 px-4 bg-primary hover:bg-blue-600 text-white font-medium rounded-lg text-center transition">Перейти к формулам</a>
+                    <h2 class="text-2xl font-bold text-center text-[#1E293B] mb-3">Физика</h2>
+                    <p class="text-gray-600 text-center mb-4">Основные формулы механики, термодинамики, электродинамики, оптики, квантовой физики, атомной физики и молекулярной физики.</p>
+                    <a href="physics.html" class="block w-full py-2 px-4 bg-[#3B82F6] hover:bg-blue-600 text-white font-medium rounded-lg text-center transition">Перейти к формулам</a>
                 </div>
             </div>
 
@@ -93,9 +72,9 @@
                     <div class="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4 mx-auto">
                         <img src="static\img\plus.svg" alt="">
                     </div>
-                    <h2 class="text-2xl font-bold text-center text-dark mb-3">Базовая математика</h2>
+                    <h2 class="text-2xl font-bold text-center text-[#1E293B] mb-3">Базовая математика</h2>
                     <p class="text-gray-600 text-center mb-10">Формулы алгебры, геометрии и тригонометрии для базового уровня.</p>
-                    <a href="basic_math.html" class="block w-full py-2 px-4 bg-secondary hover:bg-emerald-600 text-white font-medium rounded-lg text-center transition">Перейти к формулам</a>
+                    <a href="basic_math.html" class="block w-full py-2 px-4 bg-[#10B981] hover:bg-emerald-600 text-white font-medium rounded-lg text-center transition">Перейти к формулам</a>
                 </div>
             </div>
 
@@ -108,7 +87,7 @@
                     <div class="flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4 mx-auto">
                         <img src="static\img\advanc.svg" alt="">
                     </div>
-                    <h2 class="text-2xl font-bold text-center text-dark mb-3">Профильная математика</h2>
+                    <h2 class="text-2xl font-bold text-center text-[#1E293B] mb-3">Профильная математика</h2>
                     <p class="text-gray-600 text-center mb-4">Продвинутые формулы математического анализа, стереометрии и теории вероятностей.</p>
                     <a href="advanced_math.html" class="block w-full py-2 px-4 bg-purple-500 hover:bg-purple-600 text-white font-medium rounded-lg text-center transition">Перейти к формулам</a>
                 </div>
@@ -116,13 +95,13 @@
         </div>
     </main>
 
-    <footer class="bg-dark text-white py-8 mt-16">
+    <footer class="bg-[#1E293B] text-white py-8 mt-16">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
                     <div class="flex items-center space-x-2">
-                        <img src="static\img\logo.png" alt="" class=" h-8 w-8">
-                        <span class="text-xl font-bold">VseFormuly</span>
+                        <img src="logo.png" alt="" class=" h-8 w-8">
+                        <span class="text-xl font-bold">Allformuls</span>
                     </div>
                     <p class=" mt-2">Ваш помощник в изучении формул.</p>
                     <i class="text-[0.7rem] text-gray-400">*Этот сайт не собирает персональные данные посетителей. Имеются ссылки на внешние ресурсы (Telegram и др.), политика конфиденциальности которых регулируется их владельцами.</i>
@@ -139,7 +118,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center ">
-                <p>© 2025 VseFormuly. Все права защищены.</p>
+                <p>© 2025 Allformuls. Все права защищены.</p>
             </div>
         </div>
     </footer>
@@ -148,7 +127,4 @@
         feather.replace();
     </script>
 </body>
-
 </html>
-
-
